@@ -22,7 +22,7 @@ const Counter = () => {
     const [counter, setCounter] = useState(0);
     const [isRunning, setIsRunning] = useState(true);
     const [intervalId, setIntervalId] = useState(null);
-    const [targetTime, setTargetTime] = useState(10);
+    const [targetTime, setTargetTime] = useState(60);
     const [showAlert, setShowAlert] = useState(false);
 
     useEffect(() => {
@@ -64,14 +64,10 @@ const Counter = () => {
     };
 
     return (
-        <div>
+        <div className="Content">
             <SecondsCounter
-                digitFour={digitFour}
-                digitThree={digitThree}
-                digitTwo={digitTwo}
-                digitOne={digitOne}
-            />
-            <div>
+                digitFour= {digitFour} digitThree= {digitThree} digitTwo= {digitTwo} digitOne= {digitOne}/>
+            <div className="Buttons">
                 <button onClick={resumeCounter}><FontAwesomeIcon icon={faPlay} /></button>
                 <button onClick={stopCounter}><FontAwesomeIcon icon={faPause} /></button>
                 <button onClick={resetCounter}><FontAwesomeIcon icon={faArrowsRotate} /></button>
@@ -97,4 +93,3 @@ const Counter = () => {
 };
 
 export default Counter;
-
